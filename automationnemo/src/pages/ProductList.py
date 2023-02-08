@@ -27,4 +27,7 @@ class ProductListPage:
 
     def get_add_or_remove_prod_form_to_cart_locator(self, product):
         """This will return locator of Add to cart button or Remove button"""
-        return self.page.locator(f"//div[text()='{product}']/ancestor::div[@class='inventory_item_label']/following-sibling::div//button[]")
+        return self.page.locator(f"//div[text()='{product}']/ancestor::div[@class='inventory_item_label']/following-sibling::div//button")
+
+    def click_add_to_cart_or_remove(self, product):
+        self.get_add_or_remove_prod_form_to_cart_locator(product).click()

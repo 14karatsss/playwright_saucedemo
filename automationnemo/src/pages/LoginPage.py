@@ -34,4 +34,3 @@ class LoginPage:
     @property
     def login_button(self):
         return self._login_btn
-    
