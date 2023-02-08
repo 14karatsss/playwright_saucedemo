@@ -1,3 +1,4 @@
+
 ### Command for starting tests
     "pytest"
 
@@ -19,3 +20,5 @@ or
 or
 
     pytest -v
+
+##### P.S. This project is an example of how to use POM with Playwright
