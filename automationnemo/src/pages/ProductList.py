@@ -1,3 +1,6 @@
+from automationnemo.src.pages.CartPage import CartPage
+
+
 class ProductListPage:
 
     def __init__(self, page):
@@ -6,6 +9,7 @@ class ProductListPage:
         self._burger_menu = page.locator("button#react-burger-menu-btn")
         self._logout_btn = page.locator("#logout_sidebar_link")
         self._add_to_cart_btn = page.locator("//div[text()='Sauce Labs Bike Light']/ancestor::div[@class='inventory_item_label']/following-sibling::div//button")
+        self._cart_icon = page.locator("#shopping_cart_container > a")
 
     @property
     def product_header(self):
@@ -31,3 +35,8 @@ class ProductListPage:
 
     def click_add_to_cart_or_remove(self, product):
         self.get_add_or_remove_prod_form_to_cart_locator(product).click()
+        return self
+
+    def click_cart_icon(self):
+        self._cart_icon.click()
+        return CartPage(self.page)
