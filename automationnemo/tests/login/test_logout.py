@@ -1,7 +1,11 @@
+import allure
 from playwright.sync_api import Page, expect
 from automationnemo.src.pages.LoginPage import LoginPage
 
 
+@allure.feature('LogIn')
+@allure.story('logout')
+@allure.severity('trivial')
 def test_logout(set_up_tear_down) -> None:
 
     page = set_up_tear_down
