@@ -47,6 +47,5 @@ def test_login_with_no_creditionals(set_up_tear_down) -> None:
 def test_acces_inventory_without_login(set_up_tear_down) -> None:
     page = set_up_tear_down
     page.goto("https://www.saucedemo.com/inventory.html")
-
     login_p = LoginPage(page)
     expect(login_p.err_msg_locator).to_contain_text("You can only access '/inventory.html' when you are logged in.")
